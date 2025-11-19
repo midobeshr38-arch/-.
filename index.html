@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🔥 Ultra Fire Universe Booking 🔥</title>
+
+<style>
+
+/* خط */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap');
+
+body {
+    margin: 0;
+    font-family: "Cairo", sans-serif;
+    background: linear-gradient(120deg, #020202, #070b1a, #0c0018);
+    background-size: 400% 400%;
+    animation: bgwave 12s infinite ease-in-out;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* خلفية موجية */
+@keyframes bgwave {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 100%; }
+}
+
+/* النار الأساسية */
+.fire {
+    position: absolute;
+    top: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle, rgba(255,120,0,0.9), rgba(255,0,0,0.05) 70%);
+    filter: blur(40px);
+    animation: flame 1.3s infinite ease-in-out;
+    z-index: -1;
+}
+
+@keyframes flame {
+    0% { transform: translateX(-50%) scale(1); opacity: .85; }
+    50% { transform: translateX(-50%) scale(1.25); opacity: 1; }
+    100% { transform: translateX(-50%) scale(1); opacity: .8; }
+}
+
+/* لهب جانبي يمين وشمال */
+.side-flame {
+    position: absolute;
+    bottom: -30px;
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle, rgba(255,60,0,0.7), transparent 70%);
+    filter: blur(35px);
+    animation: sidefire 4s infinite ease-in-out;
+    z-index: -1;
+}
+
+.side-flame.left { left: -60px; }
+.side-flame.right { right: -60px; animation-delay: 2s; }
+
+@keyframes sidefire {
+    0% { transform: translateY(0) rotate(0deg); opacity: .8; }
+    50% { transform: translateY(-40px) rotate(15deg); opacity: 1; }
+    100% { transform: translateY(0) rotate(0deg); opacity: .75; }
+}
+
+/* دخان */
+.smoke {
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(200,200,200,0.3), transparent 70%);
+    filter: blur(20px);
+    animation: smokeRise 5s infinite ease-in-out;
+}
+
+@keyframes smokeRise {
+    0% { transform: translateX(-50%) translateY(0) scale(1); opacity:.4;}
+    100% { transform: translateX(-50%) translateY(-70px) scale(1.4); opacity:0;}
+}
+
+/* شرارات نار */
+.spark {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #ffae00;
+    border-radius: 50%;
+    animation: sparkMove 2s infinite ease-in-out;
+    opacity: .8;
+}
+@keyframes sparkMove {
+    0% { transform: translateY(0) scale(1); opacity:1; }
+    100% { transform: translateY(-80px) scale(0.3); opacity:0;}
+}
+
+/* الهيدر */
+.header {
+    text-align: center;
+    padding: 70px 0 10px;
+    position: relative;
+}
+
+.header img {
+    width: 160px;
+    animation: logoPulse 3s infinite ease-in-out;
+}
+
+/* نبض اللوجو */
+@keyframes logoPulse {
+    0% { transform: scale(1); filter: drop-shadow(0 0 15px #ff5500); }
+    50% { transform: scale(1.12); filter: drop-shadow(0 0 35px #ff2200); }
+    100% { transform: scale(1); filter: drop-shadow(0 0 15px #ff5500); }
+}
+
+.header h1 {
+    font-size: 34px;
+    background: linear-gradient(90deg,#ff9d00,#ffdd00,#ff6600);
+    background-size: 300% 300%;
+    animation: textFlow 5s infinite linear;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+@keyframes textFlow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* بار */
+.bar {
+    width: 90%;
+    height: 16px;
+    margin: 25px auto;
+    border-radius: 20px;
+    background: linear-gradient(90deg,#ff3b00,#ffae00,#ff3b00);
+    background-size: 300% 300%;
+    animation: bgwave 6s infinite;
+    box-shadow: 0 0 20px #ff4500;
+}
+
+/* الكروت */
+.card {
+    width: 90%;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 0 25px rgba(255,120,0,0.5);
+    transition: .3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: scale(1.05) translateY(-8px);
+    box-shadow: 0 0 40px rgba(255,200,0,0.8);
+}
+
+/* نار داخل كل كرت */
+.card::before {
+    content:"";
+    position:absolute;
+    width:200px;
+    height:200px;
+    right:-70px;
+    top:-70px;
+    background: radial-gradient(circle, rgba(255,70,0,0.7), transparent 70%);
+    filter: blur(40px);
+    animation: rotateGlow 5s infinite linear;
+}
+
+@keyframes rotateGlow {
+    0% { transform: rotate(0);}
+    100% { transform: rotate(360deg);}
+}
+
+/* زر */
+.btn {
+    display:inline-block;
+    padding:14px 25px;
+    border-radius:12px;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:900;
+    color:white;
+    background: linear-gradient(90deg,#ff5500,#ff2200);
+    box-shadow: 0 0 18px #ff3300;
+    transition:.2s;
+}
+
+.btn:hover {
+    transform:scale(1.15);
+    box-shadow:0 0 35px #ff3300;
+}
+
+/* زر VIP */
+.vip-btn {
+    background: linear-gradient(90deg,#ffdd00,#ff8800);
+    box-shadow: 0 0 25px #ffaa00;
+}
+
+/* صوت */
+.btn:active {
+    animation: press 0.1s ease-in-out;
+}
+
+@keyframes press {
+    from { transform:scale(1.2); }
+    to { transform:scale(1.05); }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- النار و الدخان -->
+<div class="fire"></div>
+<div class="smoke"></div>
+<div class="side-flame left"></div>
+<div class="side-flame right"></div>
+
+<!-- شرارات -->
+<div class="spark" style="left:48%;top:400px;animation-delay:0s;"></div>
+<div class="spark" style="left:52%;top:420px;animation-delay:.3s;"></div>
+<div class="spark" style="left:50%;top:450px;animation-delay:.6s;"></div>
+
+<!-- هيدر -->
+<div class="header">
+    <img src="/Barcelona/pena barcrlonicta.png">
+    <h1>  𝙋𝙚ñ𝙖  𝘽𝙖𝙧𝙘𝙚𝙡𝙤𝙣𝙞𝙨𝙩𝙖  
+𝘿𝙚  𝘼𝙡𝙚𝙭𝙖𝙣𝙙𝙧𝙞𝙖</h1>
+</div>
+
+<div class="bar"></div>
+
+<!-- بطاقة عادية -->
+<div class="card">
+    <h2>🔥 تذكرة عادية</h2>
+    <p>السعر: 60 ج.م</p>
+
+    <a class="btn" href="https://wa.me/201069621371?text=أريد%20حجز%20تذكرة%20عادية">
+        احجز على واتساب 🔥
+    </a>
+</div>
+
+<!-- بطاقة VIP -->
+<div class="card">
+    <h2 style="color:#ffdd00">👑 تذكرة VIP</h2>
+    <p>السعر: 80 ج.م</p>
+
+    <a class="btn vip-btn" href="https://wa.me/201069621371?text=أريد%20حجز%20تذكرة%20VIP">
+        احجز على واتساب 👑🔥
+    </a>
+</div>
+
+</body>
+</html>
